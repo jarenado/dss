@@ -9,15 +9,15 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `Dad Sends Sweaters`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `Dad Sends Sweaters`,
+      summary: `who makes silly posts about nothing worthwhile`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
+    description: `The home of DSS`,
+    siteUrl: `https://dadsendssweaters.com`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `dadsendssweaters`,
     },
   },
   plugins: [
