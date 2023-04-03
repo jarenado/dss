@@ -26,11 +26,17 @@ const BlogAbout = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <Bio />
-      <Nav />
-      <div>
-        This is the about section
-      </div>
+    <Nav />
+    {posts.map(post => {
+      if (post.frontmatter.title !== "About") return false
+      return (
+        <p
+          dangerouslySetInnerHTML={{
+            __html: post.html
+          }}
+        />
+      )
+    })}
     </Layout>
   )
 }
@@ -62,6 +68,7 @@ export const pageQuery = graphql`
           title
           description
         }
+        html
       }
     }
   }

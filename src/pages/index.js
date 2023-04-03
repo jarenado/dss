@@ -30,10 +30,13 @@ const BlogIndex = ({ data, location }) => {
       <Nav />
       <ol style={{ listStyle: `none` }}>
         {posts.map(post => {
+
           const title = post.frontmatter.title || post.fields.slug
           const image = getImage(post.frontmatter.image)
 
-          if (post.frontmatter.publish === "false") {
+          if (
+            post.frontmatter.publish === "false" ||
+            post.frontmatter.title === "About") {
             return false
           }
 

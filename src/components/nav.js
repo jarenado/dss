@@ -5,6 +5,12 @@ export default function Nav() {
   return (
     <nav>
       <h3
+        key={`Home`}
+        onClick={event => { navigate(`/`) }}
+      >
+        Home
+      </h3>
+      <h3
         key={`about`}
         onClick={event => { navigate(`/about/`) }}
       >
