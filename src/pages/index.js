@@ -4,6 +4,8 @@ import { Link, graphql } from "gatsby"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import Nav from "../components/nav"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
@@ -25,9 +27,11 @@ const BlogIndex = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <Bio />
+      <Nav />
       <ol style={{ listStyle: `none` }}>
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug
+          const image = getImage(post.frontmatter.image)
 
           if (post.frontmatter.publish === "false") {
             return false
@@ -44,6 +48,7 @@ const BlogIndex = ({ data, location }) => {
                   <h2>
                     <Link to={post.fields.slug} itemProp="url">
                       <span itemProp="headline">{title}</span>
+                      {image ? <GatsbyImage image={image} alt="" /> : ""}
                     </Link>
                   </h2>
                   <small>{post.frontmatter.date}</small>
@@ -92,6 +97,11 @@ export const pageQuery = graphql`
           publish
           title
           description
+          image {
+            childImageSharp {
+              gatsbyImageData(width: 800)
+            }
+          }
         }
       }
     }

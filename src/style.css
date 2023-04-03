@@ -299,9 +299,18 @@ a:focus {
 
 }
 
+nav h3 {
+  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  display: inline-flex;
+  padding-right: 20px;
+  color: #83AAB3;
+  cursor: pointer;
+}
+
 .bio {
   display: flex;
-  margin-bottom: var(--spacing-16);
 }
 
 .bio p {
