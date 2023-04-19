@@ -19,6 +19,7 @@ const BlogPostTemplate = ({
         itemType="http://schema.org/Article"
       >
         <header>
+      { (post.frontmatter.youtube) ? <iframe style={{"position": "relative", "width": "100%", "height": "600px"}} src={post.frontmatter.youtube} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> : "" }
           <h1 itemProp="headline">{post.frontmatter.title}</h1>
           <p>{post.frontmatter.date}</p>
         </header>
@@ -91,6 +92,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        youtube
       }
     }
     previous: markdownRemark(id: { eq: $previousPostId }) {

@@ -17,7 +17,7 @@ module.exports = {
     description: `The home of DSS`,
     siteUrl: `https://dadsendssweaters.com`,
     social: {
-      twitter: `dadsendssweaters`,
+      twitter: `dadsendsswetrs`,
     },
   },
   plugins: [
